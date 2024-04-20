@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-import dotenv from "dotenv";
-dotenv.configure();
+
+require("dotenv").config();
+const MONGOURL = process.env.MONGOURL;
 
 mongoose.connect(MONGOURL);
 
@@ -40,7 +41,7 @@ const accountSchema = new mongoose.Schema({
     required: true,
   },
   balance: {
-    type: Nmuber,
+    type: Number,
     required: true,
   },
 });
